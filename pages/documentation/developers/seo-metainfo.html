@@ -1,0 +1,51 @@
+<!-- pagetitle:Search Engine Optimization and Metainfo -->
+<!-- pagelayout:page-md -->
+<!-- pagedate: -->
+<!-- pageimage: --> 
+<!-- pageexcerpt:Search Engine Optimization is built in! It also takes care of a lot of things for you. -->
+<!-- pagekeywords: -->
+<!-- pageauthor:Scary le Poo -->
+<!-- pagetype:website -->
+
+## SEO Integration Documentation
+
+### Introduction
+Search Engine Optimization (SEO) is an integral part of the framework, seamlessly incorporated to enhance website visibility and performance across various search engines. This documentation outlines the framework's SEO features and provides guidelines for optimizing page metadata.
+
+### Header Tags
+Upon inspecting the `header.php` theme file, you'll notice a dedicated section for header tags. These tags play a crucial role not only in standard SEO practices but also in providing OpenGraph information. The framework includes fallback mechanisms for cases where information is absent. Each page expects a specific set of metadata, most of which defaults to predefined values if not explicitly provided.
+
+### Metadata Defaults
+It is recommended to customize information for each page to optimize SEO performance. Even seemingly minor elements like page images significantly impact SEO. For posts, the impact is amplified due to their specialized nature.
+
+#### Default Metadata Values:
+- **Page Title:** Defaults to the name of the page file.
+- **Page Layout:** Defaults to 'page'.
+- **Page Date:** If not specified, defaults to the date from the file.
+- **Page Image:** Filled from `websiteimage` defined in `config.php`.
+- **Page Excerpt:** Falls back to the website description set in `config.php`.
+- **Page Keywords:** Falls back on website keywords from `config.php`.
+- **Page Author:** Falls back on the website author set in `config.php`.
+- **Page Type:** Falls back on website settings.
+
+```
+<!-- pagetitle: -->
+<!-- pagelayout: -->
+<!-- pagedate: -->
+<!-- pageimage: --> 
+<!-- pageexcerpt: -->
+<!-- pagekeywords: -->
+<!-- pageauthor: -->
+<!-- pagetype: -->
+```
+
+### Importance of Customization
+While defaults and fallbacks exist, it's essential to customize metadata for each page for optimal SEO performance. Communicating this requirement to end-users is crucial for maximizing the framework's effectiveness.
+
+### Framework Reliability
+Efforts have been made to make the framework as foolproof as possible to minimize potential issues. However, there may still be scenarios where challenges arise beyond the scope of immediate resolution.
+
+### Viewing Metadata
+To facilitate the viewing of metadata as interpreted by search engines, a built-in method is provided. Simply append `/?meta=yes` to the end of the URL to activate the meta-info panel. Additionally, once you have added that query to your url, JavaScript automatically appends `/?meta=yes` to all page links, allowing for efficient checking across multiple pages. Clicking the home link in the navigation bar disables this feature and restores links back to their original targets.
+
+By following these guidelines and leveraging the framework's built-in SEO capabilities, users can enhance their website's visibility and performance across various search engines.

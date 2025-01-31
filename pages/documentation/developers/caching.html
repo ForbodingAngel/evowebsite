@@ -1,0 +1,38 @@
+<!-- pagetitle:Caching Pages -->
+<!-- pagelayout:page-md -->
+<!-- pagedate: -->
+<!-- pageimage: --> 
+<!-- pageexcerpt:Caching massively speeds up your website by serving up static html files. -->
+<!-- pagekeywords:Caching,Web data,Browser cache,Proxy cache,Content Delivery Network (CDN) cache,Server cache,Performance,Bandwidth conservation,Scalability,User experience -->
+<!-- pageauthor:Scary le Poo -->
+<!-- pagetype:website -->
+
+## Understanding Caching
+
+Caching involves temporarily storing web data to expedite future access. When you visit a webpage, your browser fetches various elements from the server. Instead of retrieving these components each time, caching stores them locally, reducing loading times and enhancing performance.
+
+### Types of Caching
+
+1. **Browser Cache:** Stores webpage elements locally for quicker access during subsequent visits.
+  
+2. **Proxy Cache:** Intermediate servers cache web content, reducing load on origin servers and accelerating content delivery.
+  
+3. **Content Delivery Network (CDN) Cache:** CDNs cache web content across distributed servers, optimizing speed and reliability.
+  
+4. **Server Cache:** Websites implement caching mechanisms on servers to store frequently accessed data, speeding up response times.
+
+### Importance of Caching
+
+1. **Enhanced Performance:** Faster loading times and smoother browsing experiences result from locally stored data.
+  
+2. **Bandwidth Conservation:** Minimizes network bandwidth consumption by reducing data transfer between client and server.
+  
+3. **Improved Scalability:** Alleviates server load, ensuring smooth performance during high traffic periods.
+  
+4. **Reliability and Resilience:** Distributed caching enhances reliability, allowing access to content even if one server fails.
+  
+5. **Better User Experience:** Reduces latency, speeds up page loads, and ensures seamless navigation.
+
+### Conclusion
+
+Caching is essential for optimizing web performance, providing faster, smoother, and more efficient online experiences. The Simple Website Framework utilizes Server Caching (Type 4), generating HTML pages for each visit, with a default rebuild interval of every 5 hours. Caching settings can be adjusted in `/index.php` and `/required/top-cache.php`.

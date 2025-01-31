@@ -1,0 +1,62 @@
+<!-- pagetitle:Adding Plugins -->
+<!-- pagelayout:page-md -->
+<!-- pagedate: -->
+<!-- pageimage:pages/posts/images/plugins.webp -->
+<!-- pageexcerpt:To seamlessly add a new plugin to the existing structure, follow these steps. -->
+<!-- pagekeywords:Plugin, Structure, File, PHP, CSS, JavaScript, Inclusion, Section, Conditional, Loading, Mechanism, Configuration, Variable, True, Enabled, Include, Files, Concatenate, Script, End, Page, Test, Changes, Development, Environment, Integration, Consistency, Existing, Code, Best Practices, Organizing, Stylesheets -->
+<!-- pageauthor:Scary le Poo -->
+<!-- pagetype:website -->
+
+## Prepare Your Plugin
+   - Make sure your plugin files (CSS, JavaScript, etc.) are organized and ready to be included.
+   - Ensure your plugin is compatible with the structure and requirements of the existing code.
+
+### Open the File
+   - Open the PHP file where you want to add your plugin. In this case, it is located at plugins/plugins.php
+
+### Identify Plugin Inclusion Section
+   - Locate the section in the file where other plugins are being included. Plugins are conditionally included based on certain configuration variables like `$jQuery`, `$anchorLinkAutoClass`, `$beforeAndAfterSlider`, `$fontAwesome`, and `$yBox`.
+
+### Understand Conditional Loading
+   - Understand the conditional loading mechanism. Each plugin is loaded if its corresponding configuration variable is set to `true`.
+
+### Add Configuration Variable
+   - Decide on a unique name for your plugin and define a new configuration variable similar to existing ones. For example:
+     ```php
+     <?php $myPluginEnabled = true; ?>
+     ```
+   - Ensure to set this variable to `true` if you want your plugin to be loaded.
+
+### Include CSS and JavaScript
+   - Inside the conditional block for your plugin, include the necessary CSS and JavaScript files.
+     ```php
+     <?php if ($myPluginEnabled == true) { ?>
+         <!-- Include CSS file(s) -->
+         <link type="text/css" href="path/to/your-plugin.css" rel="stylesheet" />
+         
+         <!-- Include JavaScript file(s) -->
+         <script src="path/to/your-plugin.js"></script>
+     <?php } ?>
+     ```
+
+### Concatenate Script if Necessary
+   - If your plugin requires JavaScript to be included at the end of the page, concatenate it with the `$pluginCalledBelowContent` variable.
+     ```php
+     <?php if ($myPluginEnabled == true) { ?>
+         <?php $myPluginScriptContent = '
+             <script>
+                 // Your plugin-specific JavaScript code goes here
+             </script>
+         ';
+         $pluginCalledBelowContent = $pluginCalledBelowContent . $myPluginScriptContent;
+         ?>
+     <?php } ?>
+     ```
+
+### Test Your Changes
+   - Save the file and test your changes on a development environment to ensure your plugin is loaded and functioning correctly.
+   
+### Add your Configuration Variable
+   - Make sure to add your Configuration Variable to config/config.php
+
+By following these steps, you should be able to integrate your own plugin into the provided file structure effectively. Remember to maintain consistency with the existing code structure and adhere to best practices for organizing and including scripts and stylesheets.
